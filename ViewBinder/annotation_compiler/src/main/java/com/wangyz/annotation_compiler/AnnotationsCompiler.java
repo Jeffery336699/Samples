@@ -15,6 +15,7 @@ import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Filer;
+import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
@@ -23,6 +24,7 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.element.VariableElement;
 import javax.lang.model.type.TypeMirror;
+import javax.tools.Diagnostic;
 import javax.tools.JavaFileObject;
 
 /**
@@ -34,7 +36,7 @@ import javax.tools.JavaFileObject;
 public class AnnotationsCompiler extends AbstractProcessor {
 
     private static final String PACKAGE_NAME_BINDER = "com.wangyz.binder";
-
+    private Messager mMessager;
     Filer filer;
 
     /**
@@ -63,10 +65,12 @@ public class AnnotationsCompiler extends AbstractProcessor {
     public synchronized void init(ProcessingEnvironment processingEnvironment) {
         super.init(processingEnvironment);
         filer = processingEnvironment.getFiler();
+        mMessager = processingEnv.getMessager();
     }
 
     @Override
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
+        mMessager.printMessage(Diagnostic.Kind.NOTE, "start: --------------");
         Set<? extends Element> elements = roundEnvironment.getElementsAnnotatedWith(BindView.class);
 
         //类：TypeElement
