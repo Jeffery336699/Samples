@@ -1,4 +1,4 @@
-package com.wangyz.annotation;
+package com.wangyz.annotation.permission;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,13 +6,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author wangyz
- * @time 2020/3/3 8:46
- * @description BindView
+ * Created by zhy on 16/3/2.
  */
-
-@Target(ElementType.FIELD)
-@Retention(RetentionPolicy.SOURCE)
-public @interface BindView {
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.CLASS)
+public @interface ShowRequestPermissionRationale
+{
     int value();
 }

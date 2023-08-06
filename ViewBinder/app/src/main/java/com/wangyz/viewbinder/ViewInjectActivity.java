@@ -1,14 +1,14 @@
 package com.wangyz.viewbinder;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.wangyz.annotation.BindView;
+import com.wangyz.annotation.view.BindView;
 import com.wangyz.binder.ViewBinder;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class ViewInjectActivity extends AppCompatActivity {
 
     @BindView(R.id.tv)
     TextView tv;

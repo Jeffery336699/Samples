@@ -1,7 +1,7 @@
 package com.wangyz.annotation_compiler;
 
 import com.google.auto.service.AutoService;
-import com.wangyz.annotation.Seriable;
+import com.wangyz.annotation.seriable.Seriable;
 
 import java.io.File;
 import java.io.FileWriter;

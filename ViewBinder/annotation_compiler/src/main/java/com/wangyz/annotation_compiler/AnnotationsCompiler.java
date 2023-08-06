@@ -1,7 +1,7 @@
 package com.wangyz.annotation_compiler;
 
 import com.google.auto.service.AutoService;
-import com.wangyz.annotation.BindView;
+import com.wangyz.annotation.view.BindView;
 
 import java.io.IOException;
 import java.io.Writer;

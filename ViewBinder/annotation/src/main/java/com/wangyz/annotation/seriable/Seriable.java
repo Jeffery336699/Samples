@@ -1,4 +1,4 @@
-package com.wangyz.annotation;
+package com.wangyz.annotation.seriable;
 
 
 import java.lang.annotation.ElementType;
